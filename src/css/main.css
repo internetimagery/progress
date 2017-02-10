@@ -66,6 +66,9 @@ html {
   padding: 10px;
   color: black;
   visibility: hidden;
+}
+
+.popup {
   overflow: hidden;
 }
 
