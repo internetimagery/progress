@@ -37,3 +37,22 @@ html {
   height: 100%;
   width: 100%;
 }
+
+#cog, #git {
+  color: #ffffff;
+  font-size: 200%;
+  display: block;
+  margin: 10px;
+  position: relative;
+  text-decoration: none;
+  /*text-shadow: 0px 1px 0px rgba(0,0,0,0.5);*/
+}
+#cog:hover, #git:hover {
+  color: #404040;
+}
+#git {
+  float: left;
+}
+#cog {
+  float: right;
+}
