@@ -65,11 +65,11 @@ html {
   box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5);
   padding: 10px;
   color: black;
-  visibility: hidden;
 }
 
 .popup {
-  overflow: hidden;
+  overflow: auto;
+  /*overflow: hidden;*/
 }
 
 /* Basic Grey */

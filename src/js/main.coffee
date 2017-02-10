@@ -45,7 +45,7 @@ settings = ()=>
   for i in document.forms[1].getElementsByTagName "input"
     if options[i.name]?
       i.value = options[i.name]
-
+  @get_url()
 
 @get_url = ->
   args = ("#{i.name}=#{encodeURIComponent i.value}" for i in document.forms[1].getElementsByTagName "input").join "&"
@@ -53,7 +53,6 @@ settings = ()=>
   for link in document.getElementsByClassName "url"
     link.href = url
     link.innerHTML = url
-    link.style.visibility = "visible"
 
 # Do it!
 # val = current value
