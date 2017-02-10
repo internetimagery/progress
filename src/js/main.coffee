@@ -81,6 +81,8 @@ settings = ()=>
   g = gauge options.val, options.min, options.max, options.lbl, (x)->
     if options.type == "$"
       "$#{x}"
+    else if options.type == "£"
+      "£#{x}"
     else if options.type?
       "#{x} #{options.type}"
     else
