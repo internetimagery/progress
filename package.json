@@ -2,8 +2,9 @@
   "name": "progress",
   "version": "1.0.0",
   "description": "simple progress page for general purpose",
-  "main": "index.js",
+  "main": "",
   "scripts": {
+    "deploy": "gulp deploy",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
