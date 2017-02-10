@@ -2,12 +2,15 @@
 <html id="page">
   <head>
     <meta charset="utf-8">
-    <title>TEST PAGE</title>
+    <title>My Progress</title>
+    <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
-    <h1>TEST PAGE</h1>
-    <img id="background" src="#" alt="">
+    <div id="gauge" class="gauge">
+    </div>
+    <script src="vendor/raphael-2.1.4.min.js" charset="utf-8"></script>
+    <script src="vendor/justgage.js" charset="utf-8"></script>
     <script src="js/main.js" charset="utf-8"></script>
     <script type="text/javascript">
       document.addEventListener("DOMContentLoaded", function(e){
