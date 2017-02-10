@@ -42,7 +42,7 @@ var retina = window.devicePixelRatio,
   };
 }(window));
 
-document.addEventListener("DOMContentLoaded", function() {
+confetti = function() {
   var speed = 50,
     duration = (1.0 / speed),
     confettiRibbonCount = 11,
@@ -385,9 +385,9 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     }
   }
-  window.confetti = new confetti.Context('confetti');
-  // confetti.start();
-  window.addEventListener('resize', function(event){
+  confetti = new confetti.Context('confetti');
+  confetti.start();
+  addEventListener('resize', function(event){
     window.confetti.resize();
   });
-});
+};

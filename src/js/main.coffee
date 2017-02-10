@@ -6,11 +6,11 @@ GET_Params = ()->
     @[a[0]] = (if a.length > 1 then decodeURIComponent(a[1]) else true) for a in (i.split("=") for i in location.search.substr(1).split("&"))
     this
 
-gauge = (val=min, min=0, max=100, label="", filter=(x)->x)->
+gauge = (val=0, min=0, max=100, label="", filter=(x)->x)->
   if val >= max
     setTimeout ->
-      window.confetti.start()
-    , 3200
+      confetti()
+    , 2500
   return new JustGage {
     id: "gauge"
     value: val
