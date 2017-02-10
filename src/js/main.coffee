@@ -3,9 +3,10 @@
 # Grab "GET" params from the URL
 GET_Params = ()->
   return new ->
-    @[a[0]] = (if a.length > 1 then decodeURIComponent(a[1]) else true) for a in (i.split("=") for i in location.search.substr(1).split("&"))
+    @[a[0]] = (if a.length > 1 then decodeURIComponent(a[1]) else "") for a in (i.split("=") for i in location.search.substr(1).split("&"))
     this
 
+# Make a gauge showing progress
 gauge = (val=0, min=0, max=100, label="", filter=(x)->x)->
   if val >= max
     setTimeout ->
@@ -30,6 +31,21 @@ gauge = (val=0, min=0, max=100, label="", filter=(x)->x)->
       # console.log "Done"
   }
 
+# pop up a window
+settings = =>
+  uglipop {
+    class: "popup"
+    source: "div"
+    content: "popup"
+  }
+
+@get_url = ->
+  args = ("#{i.name}=#{encodeURIComponent i.value}" for i in document.forms["settings"].getElementsByTagName "input").join "&"
+  url = "#{location.pathname}?#{args}"
+  alert url
+
+
+
 # Do it!
 # val = current value
 # min = least ammount shown
@@ -38,13 +54,21 @@ gauge = (val=0, min=0, max=100, label="", filter=(x)->x)->
 # type = type of value (ie $ / kms / people)
 # lbl = label under gauge
 @main = ->
+  # Set up our settings button
+  document.getElementById "cog"
+  .addEventListener "click", settings
+
+  # Get our requested parameters
   options = GET_Params()
+
+  settings() if not options.val?
 
   # Load up a fancy background image if requested
   if options.bg
     page = document.getElementById "page"
     page.style.backgroundImage = "url(#{options.bg})"
 
+  # Build our progress gauge
   g = gauge options.val, options.min, options.max, options.lbl, (x)->
     if options.type == "$"
       "$#{x}"

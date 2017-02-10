@@ -1,5 +1,6 @@
 src/js/*.js
 dist
+.publish
 
 # Created by https://www.gitignore.io/api/windows,osx,linux,node,bower
 
