@@ -6,6 +6,10 @@ htmlmin = require 'gulp-htmlmin'
 uglify = require 'gulp-uglify'
 imagemin = require 'gulp-imagemin'
 
+gulp.task "font", ->
+  gulp.src "src/font/*"
+  .pipe gulp.dest "dist/font"
+
 gulp.task "coffee", ->
   gulp.src "src/**/*.coffee"
   .pipe coffee()
@@ -31,7 +35,7 @@ gulp.task "img", ->
   .pipe imagemin()
   .pipe gulp.dest "dist/img"
 
-gulp.task "build", ["html", "js", "css", "img"], ->
+gulp.task "build", ["html", "js", "css", "img", "font"], ->
 
 gulp.task "deploy", ["build"], ->
   gulp.src "dist/**/*"

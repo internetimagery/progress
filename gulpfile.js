@@ -15,6 +15,10 @@
 
   imagemin = require('gulp-imagemin');
 
+  gulp.task("font", function() {
+    return gulp.src("src/font/*").pipe(gulp.dest("dist/font"));
+  });
+
   gulp.task("coffee", function() {
     return gulp.src("src/**/*.coffee").pipe(coffee()).pipe(gulp.dest("src/"));
   });
@@ -35,7 +39,7 @@
     return gulp.src("src/img/*").pipe(imagemin()).pipe(gulp.dest("dist/img"));
   });
 
-  gulp.task("build", ["html", "js", "css", "img"], function() {});
+  gulp.task("build", ["html", "js", "css", "img", "font"], function() {});
 
   gulp.task("deploy", ["build"], function() {
     return gulp.src("dist/**/*").pipe(pages());
