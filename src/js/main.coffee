@@ -35,12 +35,17 @@ gauge = (val=0, min=0, max=100, label="", filter=(x)->x)->
   }
 
 # pop up a window
-settings = =>
+settings = ()=>
   uglipop {
     class: "popup"
     source: "div"
     content: "popup"
   }
+  options = GET_Params()
+  for i in document.forms[1].getElementsByTagName "input"
+    if options[i.name]?
+      i.value = options[i.name]
+
 
 @get_url = ->
   args = ("#{i.name}=#{encodeURIComponent i.value}" for i in document.forms[1].getElementsByTagName "input").join "&"
