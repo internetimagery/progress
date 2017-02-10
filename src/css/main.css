@@ -57,19 +57,20 @@ html {
 #cog {
   float: right;
 }
-.url {
+
+.url-base {
   text-align: center;
-  display: inline-block;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 3px;
   box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5);
   padding: 10px;
+  overflow: hidden;
+}
+.url {
   color: black;
 }
 
 .popup {
-  overflow: auto;
-  /*overflow: hidden;*/
 }
 
 /* Basic Grey */
