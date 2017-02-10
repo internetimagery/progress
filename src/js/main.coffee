@@ -8,6 +8,9 @@ GET_Params = ()->
 
 # Make a gauge showing progress
 gauge = (val=0, min=0, max=100, label="", filter=(x)->x)->
+  val = parseInt(val)
+  min = parseInt(min)
+  max = parseInt(max)
   if val >= max
     setTimeout ->
       confetti()
@@ -40,11 +43,12 @@ settings = =>
   }
 
 @get_url = ->
-  args = ("#{i.name}=#{encodeURIComponent i.value}" for i in document.forms["settings"].getElementsByTagName "input").join "&"
-  url = "#{location.pathname}?#{args}"
-  alert url
-
-
+  args = ("#{i.name}=#{encodeURIComponent i.value}" for i in document.forms[1].getElementsByTagName "input").join "&"
+  url = "#{location.protocol}//#{location.hostname}#{location.pathname}?#{args}"
+  for link in document.getElementsByClassName "url"
+    link.href = url
+    link.innerHTML = url
+    link.style.visibility = "visible"
 
 # Do it!
 # val = current value

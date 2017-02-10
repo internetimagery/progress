@@ -57,6 +57,16 @@ html {
 #cog {
   float: right;
 }
+.url {
+  text-align: center;
+  display: inline-block;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+  box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  color: black;
+  visibility: hidden;
+}
 
 /* Basic Grey */
 .basic-grey {
