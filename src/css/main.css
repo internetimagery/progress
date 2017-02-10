@@ -1,5 +1,13 @@
 /*Stylin'*/
 
+html, body {
+  margin: 0;
+  padding: 0;
+  /*background: #000;*/
+  height: 100%;
+  width: 100%;
+}
+
 html {
   background: no-repeat center center fixed;
   background-image: url(../img/gradient-background.jpg);
@@ -9,7 +17,7 @@ html {
   background-size: cover;
 }
 
-.gauge {
+#gauge {
   position: absolute;
   margin: auto;
   top: 0;
@@ -20,4 +28,12 @@ html {
   overflow: hidden;
   padding: 20px;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+#confetti{
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
 }
