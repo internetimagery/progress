@@ -3,8 +3,10 @@
   <head>
     <meta charset="utf-8">
     <title>My Progress</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <link rel="stylesheet" href="css/normalize.css">
     <link rel="stylesheet" href="css/vendor/icons.css">
+    <link rel="stylesheet" href="css/vendor/tingle.css">
     <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
@@ -12,6 +14,43 @@
     <canvas id="confetti" width="1" height="1"></canvas>
     <a href="https://github.com/internetimagery/progress" id="git" class="icon-github"></a>
     <a href="#" id="cog" class="icon-cog"></a>
+    <div id="popup" style="display:none">
+      <form name="settings" class="basic-grey" action="" method="post">
+        <h1>Share a link</h1>
+        <span>Fill in the below to get your url.</span>
+        <p>
+          <label>
+            <span>Value</span>
+            <input type="text" name="val" value="0">
+          </label>
+          <label>
+            <span>Minimum</span>
+            <input type="text" name="min" value="0">
+          </label>
+          <label>
+            <span>Maximum</span>
+            <input type="text" name="max" value="100">
+          </label>
+          <label>
+            <span>Label</span>
+            <input type="text" name="lbl" value="Dollars Remain">
+          </label>
+          <label>
+            <span>Type</span>
+            <input type="text" name="type" value="$">
+          </label>
+          <label>
+            <span>Background Image</span>
+            <input type="text" name="bg" value="">
+          </label>
+          <label>
+            <span></span>
+            <button onclick="get_url();" class="button" type="button" name="button">Get Link</button>
+          </label>
+        </p>
+      </form>
+    </div>
+    <script src="js/vendor/uglipop.min.js" charset="utf-8"></script>
     <script src="js/vendor/confetti.js" charset="utf-8"></script>
     <script src="js/vendor/raphael-2.1.4.min.js" charset="utf-8"></script>
     <script src="js/vendor/justgage.js" charset="utf-8"></script>
