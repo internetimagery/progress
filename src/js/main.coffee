@@ -50,7 +50,6 @@ settings = ()=>
         i.checked = options[i.name] == "true"
       else
         i.value = options[i.name]
-  @get_url()
 
 @get_url = ->
   args = ("#{i.name}=#{encodeURIComponent if "checkbox" == i.type then i.checked else i.value}" for i in document.forms[1].getElementsByTagName "input").join "&"
