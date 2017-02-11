@@ -55,9 +55,7 @@ settings = ()=>
 @get_url = ->
   args = ("#{i.name}=#{encodeURIComponent if "checkbox" == i.type then i.checked else i.value}" for i in document.forms[1].getElementsByTagName "input").join "&"
   url = "#{location.protocol}//#{location.hostname}#{location.pathname}?#{args}"
-  for link in document.getElementsByClassName "url"
-    link.href = url
-    link.innerHTML = url
+  window.location = url
 
 # Do it!
 # val = current value
